@@ -28,7 +28,6 @@ class DisplayImage extends Component {
         this.state = 0;
     }
     
-    
     render() {
         return (
             <div>

@@ -31,18 +31,20 @@ class App extends React.Component {
         //updates images with those inside data.results
         this.setState({images:response.data.results})
 
+        //makes API call to youtube
         const response2 = await youtubeAPI.get('/search', {
             params: {
                 q:val
             }
         })
 
+        //updates videos with those inside data.items
         this.setState({
             videos: response2.data.items
         })
     };
 
-    handleVideoSelect = (video) => {
+    selectedVideo = (video) => {
         this.setState({videoSelect: video})
     }
 
@@ -50,13 +52,13 @@ class App extends React.Component {
         return (
             <div>
                 <InputField userSubmit={this.imageSubmit} />
-                <span>Displaying: {this.state.images.length} images and {this.state.videos.length} videos
+                <span>Displaying: {this.state.images.length} pictures and {this.state.videos.length} videos
                 </span>
                 <div>
                     <PlayVideo video={this.state.videoSelect}/>
                 </div>
                 <Images foundImages={this.state.images} />
-                <Videos handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+                <Videos selectedVideo={this.selectedVideo} videos={this.state.videos}/>
             </div>
         )
     }

@@ -1,12 +1,13 @@
+//plays the video when user clicks on item
 import React from 'react';
 
+//initializes video
 const PlayVideo = ({video}) => {
     if (!video) {
-        return <div>Loading ...</div>;
+        return <div></div>;
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
-    console.log(typeof(video));
     return (
         <div>
             <div>
