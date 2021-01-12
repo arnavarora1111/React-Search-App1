@@ -1,21 +1,22 @@
+//displays all images on screen
 import React from 'react';
 import './Images.css';
 import DisplayImage from './DisplayImage';
 
 const Images = (props) => {
-    const imgs = props.foundImages.map(img => {
-        return <DisplayImage key={img.id} image={img} />
+    const images = props.foundImages.map(image => {
+        return <DisplayImage key={image.id} image={image} />
     });
 
     return (
         <div className="style__image">
-            <div className="style__image">{imgs[0]}</div> 
-            {imgs[1]} 
-            {imgs[2]} 
-            {imgs[3]} 
-            {imgs[4]} 
-            {imgs[5]} 
-            {imgs[6]} 
+            <div className="style__image"> {images[0]} </div> 
+            {images[1]} 
+            {images[2]} 
+            {images[3]} 
+            {images[4]} 
+            {images[5]} 
+            {images[6]} 
         </div>
     )
 }

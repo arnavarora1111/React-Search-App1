@@ -1,13 +1,20 @@
-.flexContainer {
+/*
+Styles the input field box
+*/
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 2px solid black;
 }
 
-.inputStyle{
-    font-size : 1.5em;
-    padding: 3px;
+/*
+Styles the font and display of the text entered by user
+*/
+.userInput{
+    font-size : 1.75em;
+    padding: 4px;
     display: incline-block;
-    width: 30%;
+    width: 25%;
 }
+

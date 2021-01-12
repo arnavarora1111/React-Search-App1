@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+// function to download image when user clicks on it
+//saves image as .png
 function imageDownload(src) {
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -19,28 +21,18 @@ function imageDownload(src) {
     };
 }
 
+//displays each image
 class DisplayImage extends Component {
     constructor(props) {
         super(props);
-        this.state = {spans: 0}
-        this.imageRef = React.createRef();
+        this.state = 0;
     }
-
-    componentDidMount() {
-            this.imageRef.current.addEventListener('load', this.setSpans);
-        }
-
-        setSpans = () => {
-            const height = this.imageRef.current.clientHeight;
-            const spansRows = Math.ceil(height/10);
-            this.setState({spans: spansRows});
-        }
+    
     
     render() {
         return (
-            <div style = {{gridRowEnd: `span ${this.state.spans}`}}>
-                <img ref={this.imageRef}
-                    src={this.props.image.urls.regular}
+            <div>
+                <img src={this.props.image.urls.regular}
                     alt={this.props.image.alt_description}
                     onClick={() => imageDownload(this.props.image.urls.regular)} />
             </div>
