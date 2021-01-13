@@ -13,7 +13,9 @@ class App extends React.Component {
     state = {
         images: [],
         videos: [],
-        videoSelect: null 
+        videoSelect: null,
+        searchTerm: null,
+        clickedVideos: []
     };
 
     //converts function to a promise with use of async
@@ -26,6 +28,8 @@ class App extends React.Component {
                 Authorization: `Client-ID ${API_KEY}`
             }
         })
+
+        this.setState({searchTerm: val})
 
         //all images are contained in list inside data.results
         //updates images with those inside data.results
@@ -60,7 +64,8 @@ class App extends React.Component {
                 <div>
                     <PlayVideo video={this.state.videoSelect}/>
                 </div>
-                <Images foundImages={this.state.images} />
+                <Images foundImages={this.state.images} clickedVideos={this.state.clickedVideos} 
+                searchTerm={this.state.searchTerm} />
                 <Videos selectedVideo={this.selectedVideo} 
                         videos={this.state.videos}/>
             </div>
