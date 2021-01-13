@@ -1,7 +1,11 @@
+//child component of Images
+
 import React, {Component} from 'react';
 
-// function to download image when user clicks on it
+//function to download image when user clicks on it
 //saves image as .png
+//source used for the function below:
+//https://stackoverflow.com/questions/62295172/onclick-save-image-as-in-react
 function imageDownload(src) {
     const img = new Image();
     img.crossOrigin = "anonymous";
@@ -23,10 +27,6 @@ function imageDownload(src) {
 
 //displays each image
 class DisplayImage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = 0;
-    }
     
     render() {
         return (

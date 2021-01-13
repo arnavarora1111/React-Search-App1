@@ -3,18 +3,26 @@ Styles the input field box
 */
 .container {
     display: flex;
-    justify-content: center;
     align-items: center;
     border: 2px solid black;
+    justify-content: center;
+    
 }
 
 /*
 Styles the font and display of the text entered by user
 */
 .userInput{
-    font-size : 1.75em;
+    font-size : 30px;
     padding: 4px;
     display: incline-block;
     width: 25%;
 }
 
+/*
+Styles the display message below the input field
+*/
+.displayText{
+    font-size : 20px;
+    padding: 5px;
+}

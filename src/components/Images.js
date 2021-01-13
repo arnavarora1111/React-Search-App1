@@ -3,8 +3,10 @@ import React from 'react';
 import './Images.css';
 import DisplayImage from './DisplayImage';
 
+//maps over props.foundImages array
 const Images = (props) => {
     const images = props.foundImages.map(image => {
+        //each image needs a unique id
         return <DisplayImage key={image.id} image={image} />
     });
 

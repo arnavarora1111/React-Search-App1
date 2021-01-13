@@ -44,6 +44,7 @@ class App extends React.Component {
         })
     };
 
+    //updates videoSelect when user clicks on a video
     selectedVideo = (video) => {
         this.setState({videoSelect: video})
     }
@@ -52,20 +53,19 @@ class App extends React.Component {
         return (
             <div>
                 <InputField userSubmit={this.imageSubmit} />
-                <span>Displaying: {this.state.images.length} pictures and {this.state.videos.length} videos
+                <span className='displayText'> 
+                    Displaying: {this.state.images.length} pictures 
+                    and {this.state.videos.length} videos
                 </span>
                 <div>
                     <PlayVideo video={this.state.videoSelect}/>
                 </div>
                 <Images foundImages={this.state.images} />
-                <Videos selectedVideo={this.selectedVideo} videos={this.state.videos}/>
+                <Videos selectedVideo={this.selectedVideo} 
+                        videos={this.state.videos}/>
             </div>
         )
     }
 }
 
 export default App;
-
-
-
-

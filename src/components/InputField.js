@@ -14,7 +14,7 @@ class InputField extends React.Component {
 
     //callback function called whenever user presses enter on keyboard
     onSubmit = (event) => {
-        //prevents default link behavior of opening new page
+        //prevents default link behavior of opening a new page
         event.preventDefault();
         this.props.userSubmit(this.state.term);
     }
