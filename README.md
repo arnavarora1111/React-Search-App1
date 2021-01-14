@@ -16,7 +16,8 @@ YouTube Data API.
 1.) Download Node.js and npm from the following link below:
     a.) https://www.npmjs.com/get-npm
     b.) Click on the Download Node.js and npm button
-    c.) Download the 14.15.4 LTS Version (Recommended For Most Users)
+    c.) Download either the 14.15.4 LTS Version (Recommended For Most Users)
+        or 15.5.1 Current (Latest features)
 
 2.) Download or git clone all the source files above in a separate folder
 
