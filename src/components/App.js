@@ -21,13 +21,13 @@ class App extends React.Component {
     //writes url into a json file
     //called when user clicks on a image or video
     callbackFunction1 = (childData) => {
-        console.log(this.props.searchTerm)
+        console.log(this.state.searchTerm)
         this.setState({clickedImages: [...this.state.clickedImages, childData]})
         console.log(childData)
         console.log(this.state.clickedImages)
 
         var dict = {};
-        dict[this.props.searchTerm] = this.state.clickedImages
+        dict[this.state.searchTerm] = this.state.clickedImages
         console.log(dict)
         var json = JSON.stringify(dict);
         var a = document.createElement("a")
