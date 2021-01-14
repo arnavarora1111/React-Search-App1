@@ -12,7 +12,7 @@ class Images extends React.Component {
     sendUrlToApp = (url) => {
         // console.log(url);
         // console.log(this.state.clickedImagesList);
-        this.props.parentCallback(url);
+        this.props.parentCallBack1(url);
     }
     
     //function appends the url link to clickedImages Array
@@ -38,7 +38,7 @@ class Images extends React.Component {
         const images = this.props.foundImages.map(image => {
             //each image needs a unique id
             return <DisplayImage key={image.id} image={image} 
-                    parentCallback = {this.callbackFunction}/>
+                    parentCallback = {this.sendUrlToApp}/>
         });
         return (
             <div className="style__image">

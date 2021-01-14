@@ -9,6 +9,12 @@ class Videos extends React.Component {
         clickedImages: []
     }
 
+    sendUrlToApp = (url) => {
+        // console.log(url);
+        // console.log(this.state.clickedImagesList);
+        this.props.parentCallBack1(url);
+    }
+
     //function appends the url link to clickedImages Array
     //function called when user clicks on an image
     callbackFunction = (childData) => {
@@ -24,7 +30,7 @@ class Videos extends React.Component {
             const listVideos = videos.map((video) => {
                 return <DisplayVideo key={video.id.videoID} video={video} 
                         selectedVideo={selectedVideo} 
-                        parentCallback = {this.callbackFunction}/>
+                        parentCallback = {this.sendUrlToApp}/>
             });
 
         return (

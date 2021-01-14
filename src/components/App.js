@@ -20,7 +20,12 @@ class App extends React.Component {
 
     //writes url into a json file
     //called when user clicks on a image or video
-    callBackFunction1 = (urldata) => {
+    callbackFunction1 = (childData) => {
+        console.log(this.props.searchTerm)
+        this.setState({clickedImages: [...this.state.clickedImages, childData]})
+        console.log(childData)
+        console.log(this.state.clickedImages)
+
         var dict = {};
         dict[this.props.searchTerm] = this.state.clickedImages
         console.log(dict)
@@ -82,6 +87,7 @@ class App extends React.Component {
                 searchTerm={this.state.searchTerm} parentCallBack1={this.callbackFunction1} />
                 <Videos selectedVideo={this.selectedVideo} 
                         clickedImages={this.state.clickedImages}
+                        parentCallBack1={this.callbackFunction1}
                         videos={this.state.videos}/>
             </div>
         )
