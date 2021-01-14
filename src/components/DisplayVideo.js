@@ -3,17 +3,17 @@
 import React from 'react';
 
 class DisplayVideo extends React.Component {
+
+    //sends url to parent component (Videos.js)
     sendUrl = (url) => {
-        // console.log(url);
-        // console.log(this.state.clickedImagesList);
-        this.props.parentCallback(url);
+        this.props.parentCallback('https://www.youtube.com/watch?v=' + url);
     }
 
     render () {
         const {video,selectedVideo} = this.props;
         return ( 
             <div onClick={() => {selectedVideo(video);
-                this.sendUrl(video.snippet.thumbnails.medium.url)}}>
+                this.sendUrl(video.id.videoId)}}>
                 <img src={video.snippet.thumbnails.medium.url} 
                         alt={video.snippet.description}/>
                 <div>

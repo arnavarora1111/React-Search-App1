@@ -22,17 +22,26 @@ class App extends React.Component {
     //called when user clicks on a image or video
     callbackFunction1 = (childData) => {
         console.log(this.state.searchTerm)
+        //appends url to clickedImages List
+        console.log("Before: ", this.state.clickedImages)
         this.setState({clickedImages: [...this.state.clickedImages, childData]})
         console.log(childData)
-        console.log(this.state.clickedImages)
+        console.log("After: ", this.state.clickedImages)
 
         var dict = {};
-        dict[this.state.searchTerm] = this.state.clickedImages
+        var tempList = [];
+        var copyClicked = this.state.clickedImages
+        //tempList created since state not updated immediately
+        tempList = [...copyClicked, childData]
+        console.log("Temp list: ", tempList)
+        //SearchTerm is the key and the updated clickedImages List is the value
+        dict[this.state.searchTerm] = tempList
         console.log(dict)
         var json = JSON.stringify(dict);
         var a = document.createElement("a")
         var file = new Blob([json], {type: 'text/json'});
         a.href = URL.createObjectURL(file);
+        //saves file as interest.json each time user clicks on image or video
         a.download = "interest.json";
         a.click();
     }
@@ -83,15 +92,14 @@ class App extends React.Component {
                 <div>
                     <PlayVideo video={this.state.videoSelect}/>
                 </div>
-                <Images foundImages={this.state.images} clickedImages={this.state.clickedImages} 
-                searchTerm={this.state.searchTerm} parentCallBack1={this.callbackFunction1} />
+                <Images foundImages={this.state.images} 
+                        parentCallBack1={this.callbackFunction1} />
+                        
                 <Videos selectedVideo={this.selectedVideo} 
-                        clickedImages={this.state.clickedImages}
                         parentCallBack1={this.callbackFunction1}
                         videos={this.state.videos}/>
             </div>
         )
     }
 }
-
 export default App;

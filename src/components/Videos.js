@@ -9,19 +9,9 @@ class Videos extends React.Component {
         clickedImages: []
     }
 
+    //sends url to the main App Component
     sendUrlToApp = (url) => {
-        // console.log(url);
-        // console.log(this.state.clickedImagesList);
         this.props.parentCallBack1(url);
-    }
-
-    //function appends the url link to clickedImages Array
-    //function called when user clicks on an image
-    callbackFunction = (childData) => {
-        console.log(this.props.searchTerm)
-        this.setState({clickedImages: [...this.state.clickedImages, childData]})
-        console.log(childData)
-        console.log(this.state.clickedImages)
     }
 
     render() {

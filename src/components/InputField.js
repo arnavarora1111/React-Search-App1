@@ -12,12 +12,6 @@ class InputField extends React.Component {
         this.setState({term: event.target.value})
     }
 
-    sendSearchTerm = (url) => {
-        // console.log(url);
-        // console.log(this.state.clickedImagesList);
-        this.props.parentCallback(url);
-    }
-
     //callback function called whenever user presses enter on keyboard
     onSubmit = (event) => {
         //prevents default link behavior of opening a new page

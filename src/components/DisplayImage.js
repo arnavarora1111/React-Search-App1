@@ -5,13 +5,11 @@ import React, {Component} from 'react';
 //displays each image
 class DisplayImage extends Component {
 
+    //send url to parent component (Images.js)
+    //used for the clickedImages List
     sendUrl = (url) => {
-        // console.log(url);
-        // console.log(this.state.clickedImagesList);
         this.props.parentCallback(url);
     }
-
-    // sendUrl2 
 
     render() {
         return (
